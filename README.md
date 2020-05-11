@@ -23,7 +23,7 @@ Copy the ```central_config.py.example``` to central_config.py and edit as necess
 
 Store your CaaS JSON file in a file. Please see example1.py, example2.json and example3.json for examples. 
 
-###The CaaS script take two arguments. 
+### The CaaS script take two arguments. 
 - The configuration you want to upload to Central (in JSON) format. 
 - The group_name and, if necessary, device that this config should apply to.
 
