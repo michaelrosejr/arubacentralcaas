@@ -15,11 +15,11 @@ Once the script has been downloaded, it is recommended to run the script within 
 
 ```
 pipenv shell
-``
+```
  
 This will install all the necessary packages and start the virtual shell.
 
-Copy the ```central_config.py.example``` to central_config.py``` and edit as necessary for your environment and Aruba Central account.
+Copy the ```central_config.py.example``` to central_config.py and edit as necessary for your environment and Aruba Central account.
 
 Store your CaaS JSON file in a file. Please see example1.py, example2.json and example3.json for examples. 
 
