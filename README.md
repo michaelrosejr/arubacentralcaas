@@ -8,7 +8,7 @@ This script will install the Selenium webdriver for Python. However, you will ne
 
 To install the script, 
 ```
-
+git clone git@github.com:michaelrosejr/arubacentralcaas.git
 ```
 
 Once the script has been downloaded, it is recommended to run the script within a virtual enviroment. This script is already configured for pipenv. To enable the virtual shell, execute the following:
