@@ -10,7 +10,7 @@ To install the script,
 ```
 git clone git@github.com:michaelrosejr/arubacentralcaas.git
 ```
-
+### Start the virtualized shell
 Once the script has been downloaded, it is recommended to run the script within a virtual enviroment. This script is already configured for pipenv. To enable the virtual shell, execute the following:
 
 ```
@@ -19,9 +19,20 @@ pipenv shell
  
 This will install all the necessary packages and start the virtual shell.
 
-Copy the ```central_config.py.example``` to central_config.py and edit as necessary for your environment and Aruba Central account.
+Copy the ```central_config.py.example``` to ```central_config.py``` and edit as necessary for your environment and Aruba Central account.
 
-Store your CaaS JSON file in a file. Please see example1.py, example2.json and example3.json for examples. 
+Store your CaaS JSON file in a file. Please see ```example1.py```, ```example2.json``` and ```example3.json``` for examples. 
+
+### Get the cookies
+Execute the following script to start Selenium to login using your browser to save the cookies.
+
+This script must run from your terminal/shell and not inside your IDE.
+
+```
+ptyhon3 ac_cookie.py
+```
+
+**NOTE**: Once the script completes, the script will create a file called ```cookie.pkl```. This is the cookies downloaded from your webbrowser and saved in [pickle](https://docs.python.org/3/library/pickle.html) object as Selenium stores the the cookies in a seriealized object. This file will be used in the next section.
 
 ### The CaaS script take two arguments. 
 - The configuration you want to upload to Central (in JSON) format. 
