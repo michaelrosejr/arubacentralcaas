@@ -29,7 +29,7 @@ Execute the following script to start Selenium to login using your browser to sa
 This script must run from your terminal/shell and not inside your IDE.
 
 ```
-ptyhon3 ac_cookie.py
+python3 ac_cookie.py
 ```
 
 **NOTE**: Once the script completes, the script will create a file called ```cookie.pkl```. This is the cookies downloaded from your webbrowser and saved in [pickle](https://docs.python.org/3/library/pickle.html) object as Selenium stores the the cookies in a seriealized object. This file will be used in the next section.
