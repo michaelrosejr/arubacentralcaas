@@ -1,28 +1,15 @@
 #!/usr/bin/env python3
 
-
-customer_id = "*******"
-username = "****@***.com"
-password = "********************"
-
-# Login URL
-# Change the below URL based on region. US-2 is default included here
-#url = "https://portal-prod2.central.arubanetworks.com/platform/login/user#/QUICKNETWORK"  # a redirect to a login page occurs
-url = "https://portal-prod2.central.arubanetworks.com/platform/login/user#/QUICKNETWORK"  # a redirect to a login page occurs
-
-# Aruba Central Network Operations URL
-# Change the below URL for the region. US-2 is default included here
-network_url = "https://app-prod2-ui.central.arubanetworks.com"
-
-# Which broswer are you using for selenium to grab the web cookie
-webbrowser = "Firefox"
-# webbrowser = "Chrome"
-
-# There's a few redirects after login. This section introduces a wait until the pages redirect and loads
-# This section may need to be commented out if the customer does not have more than one account setup in the cluster.
 #
-# NOTE: customerId_0 is the first option of the Account Selector, customerId_1 is the second, customerId_2 is the third, etc
-account_selection = "customerId_0"
+# If you're only using this script, it only necessary to set the api_url and token_file.
+# The other fields are used for Seleinum to login via the Web GUI
+#
 
-# File to save Cookies
-cookie_file = "cookie.pkl"
+# US-2
+# api_url = "https://apigw-prod2.central.arubanetworks.com"
+
+# Internal
+api_url = "https://internal-apigw.central.arubanetworks.com"
+
+# Token File. I name mine after the customer nick name
+token_file = "Bellab.token.json"
