@@ -6,7 +6,7 @@ This script push devices changes via JSON to Aruba Central API. This is useful i
 
 As of Aruba Central 2.5.1, the CaaS API is now available using access tokens. If you're looking for the previous script, it has been moved to cookie_version.
 
-I've also added a python script to do the equiviant to a `show commited` in the AOS CLI. The script is called `show_commited`. Please [see details below](#show-commited) on show_committed below.
+I've also added a python script to do the equiviant to a `show committed` in the AOS CLI. The script is called `show_committed`. Please [see details below](#show-committed) on show_committed below.
 
 These python scripts use the CaaS API to push configurations to Aruba Central that the GUI does not support. This is particluarly useful if you have to make a signficant amount of changes, such as add a large number of netdestiations, ACLs, VLANs, etc.
 
@@ -52,7 +52,11 @@ OR for a group level change:
 python3 caastokens.py example1.json SEATTLE
 ```
 
-### <a id="show-commited">Show Commited</a>
+![](images/caastokens.png)
+
+
+
+### <a id="show-committed">Show Committed</a>
 The following script will show the configuration of a device or group in Central. The configuration for this script will be pulled from the `central_config.py` file. 
 ****NOTE: The show_committed script only uses the token_file and api_url
 
@@ -62,6 +66,8 @@ The following script will show the configuration of a device or group in Central
 OR
 
 ```python3 show_committed.py SEATTLE/20:3b:03:b5:f9:15```
+
+![](images/show_committed.png)
 
 ### License
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
