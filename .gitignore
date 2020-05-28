@@ -1,3 +1,4 @@
+.vscode
 .DS_Store
 .huskyrc.json
 out
@@ -49,3 +50,5 @@ geckodriver.log
 testcookie.py
 cookie.pkl
 central_config.py 
+token.json
+Bellab.token.json
