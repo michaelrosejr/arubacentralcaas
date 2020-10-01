@@ -14,7 +14,7 @@ These python scripts use the CaaS API to push configurations to Aruba Central th
 
 To install the script, 
 ```
-git clone git@github.com:michaelrosejr/arubacentralcaas.git
+git clone https://github.com/michaelrosejr/arubacentralcaas.git
 ```
 ### Usage
 Once the script has been downloaded, it is recommended to run the script within a virtual enviroment. This script is already configured for pipenv. To enable the virtual shell, execute the following:
