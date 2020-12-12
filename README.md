@@ -2,7 +2,7 @@
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
-This script push devices changes via JSON to Aruba Central API. This is useful if the Web GUI or API does not exist for specific feature or option in the config, that's not available in the Web GUI.
+This script push devices changes via JSON updates to Aruba Central API for gateways/controllers (SD-WAN or AOS10). This is useful if the Web GUI or API does not exist for specific feature or option in the config, that's not available in the Web GUI.
 
 As of Aruba Central 2.5.1, the CaaS API is now available using access tokens. If you're looking for the previous script, it has been moved to cookie_version.
 
