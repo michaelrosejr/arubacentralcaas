@@ -44,6 +44,7 @@ pydevd*.log
 nodeLanguageServer/**
 nodeLanguageServer.*/**
 
+temp/
 
 #
 geckodriver.log

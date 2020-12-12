@@ -10,6 +10,24 @@ I've also added a python script to do the equiviant to a `show committed` in the
 
 These python scripts use the CaaS API to push configurations to Aruba Central that the GUI does not support. This is particluarly useful if you have to make a signficant amount of changes, such as add a large number of netdestiations, ACLs, VLANs, etc.
 
+
+### Update
+2020-12-11: This script now uses pycentral SDK. The biggest change is the config file has been moved to the config directory and now uses yaml. You can also add multiple Aruba Central accounts and change which account you're using setting the OS environment setting.
+
+```
+CENTRAL_ACCOUNT=hoolio
+CENTRAL_REGION=us2
+```
+
+Mac/Linux: 
+`export CENTRAL_ACCOUNT=hoolio`
+
+Windows: 
+`setx CENTRAL_ACCOUNT=hoolio`
+
+
+The config.yaml file has a list of regions, which may be incomplete. Please refer to Aruba Central help guides for the URL for your region.
+
 ### Installation
 
 To install the script, 
@@ -20,12 +38,14 @@ git clone https://github.com/michaelrosejr/arubacentralcaas.git
 Once the script has been downloaded, it is recommended to run the script within a virtual enviroment. This script is already configured for pipenv. To enable the virtual shell, execute the following:
 
 ```
-pipenv shell
+python3 -m venv venv
+source venv/bin/activate
+pip3 install -r requirements.txt 
 ```
  
 This will install all the necessary packages and start the virtual shell.
 
-Copy the ```central_config.py.example``` to ```central_config.py``` and edit as necessary for your environment and Aruba Central account.
+In the config directory, copy the ```config.yaml.sample``` to ```config.yaml``` and edit as necessary for your environment and Aruba Central account.
 
 For confiugrations you want to push to Central, store your CaaS JSON in a file. Please see ```example1.py```, ```example2.json``` and ```example3.json``` for examples. 
 
