@@ -1,0 +1,5 @@
+{
+    "cli_cmds": [
+      "ntp server 3.europe.pool.ntp.org ", 
+      "!"]
+  }

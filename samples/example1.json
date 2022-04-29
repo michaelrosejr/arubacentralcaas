@@ -1,0 +1,6 @@
+{
+  "cli_cmds": [
+    "vlan 888", 
+    "description 'This is API description'", 
+    "!"]
+}

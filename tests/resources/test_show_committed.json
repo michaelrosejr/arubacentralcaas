@@ -1,0 +1,18 @@
+{
+  "config": [
+    "masterip internal-device.central.arubanetworks.com web-socket-acp ",
+    "!",
+    "crypto-local pki ServerCert vcgwcert vcgcert.p12 ",
+    "!",
+    "est-activate vgw_est_srv ",
+    "!",
+    "netdestination test-api-alias ",
+    "!",
+    "netdestination test-myapi-myalias ",
+    "    host 1.2.1.2 ",
+    "router oap redistribute static route-map allowall ",
+    "!",
+    "router oap redistribute bgp route-map allowall ",
+    "!"
+  ]
+}

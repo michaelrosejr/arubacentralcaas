@@ -1,0 +1,10 @@
+{
+    "cli_cmds": [
+        "netdestination test-api-alias",
+        "host 1.2.3.4",
+        "!",
+        "ip access-list session test-api-acl",
+        "alias test-api-alias any any permit",
+        "!"
+    ]
+}

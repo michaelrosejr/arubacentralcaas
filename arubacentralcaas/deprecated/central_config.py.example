@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+#
+# If you're only using this script, it only necessary to set the api_url and token_file.
+# The other fields are used for Seleinum to login via the Web GUI
+#
+
+# US-2
+# api_url = "https://apigw-prod2.central.arubanetworks.com"
+
+# Internal
+api_url = "https://internal-apigw.central.arubanetworks.com"
+
+# Token File. I name mine after the customer nick name
+token_file = "Bellab.token.json"
