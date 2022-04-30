@@ -30,7 +30,7 @@ test_dir = "tests/resources/"
 save_output_dir = "temp/"
 storedaccount = settings.ACCOUNT
 print(
-    f"\nUsing acccount: [#ff8300]{storedaccount}[/#ff8300]. To change use --account or set the ACCOUNT environment variable: [yellow]export ACCOUNT='myprofile'[/yellow].\n"
+    f"\nUsing acccount: [#ff8300]{storedaccount}[/#ff8300]. \nTo change use --account or set the ACCOUNT environment variable: [yellow]export ACCOUNT='myprofile'[/yellow].\n"
 )
 
 
@@ -204,6 +204,10 @@ def caas_push_config(config_file, groupdev_name, account):
 
 @app.command()
 def show_accounts(account: str = typer.Option(storedaccount, help="show accounts")):
+    '''
+        show a list of accounts configured in the config.yaml file
+
+    '''
     print(f"Account Name: [#ff8300]{settings.ACCOUNT}[/#ff8300]")
     print("\nOther accounts in config file:")
     for profiles in configfile.keys():
