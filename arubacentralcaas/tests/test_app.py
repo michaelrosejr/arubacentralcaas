@@ -1,14 +1,9 @@
-import json
 import sys
-from http import HTTPStatus
 from pathlib import Path
 
-import pytest
-import typer
-from typer.testing import CliRunner
-
 sys.path.append(str(Path(".").absolute().parent))
-from app import app
+from app import app  # noqa: E402
+from typer.testing import CliRunner  # noqa: E402
 
 runner = CliRunner()
 
