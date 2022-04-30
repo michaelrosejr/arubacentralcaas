@@ -33,7 +33,7 @@ Commands:
 ```
 ## Installation
 
-Requires python 3.7+ and pip
+Requires python 3.9+ and pip
 
 ### Using Poetry
 ```
