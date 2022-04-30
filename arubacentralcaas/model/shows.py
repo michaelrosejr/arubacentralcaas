@@ -3,7 +3,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(".").absolute().parent))
 from config.settings import get_config, get_ttl_hash  # noqa: E402
-from views.outputs import check_output  # noqa: E402
+from views.displays import check_output  # noqa: E402
 
 
 def show_device_committed(group_name, account):

@@ -14,7 +14,7 @@ from model.shows import (
     show_device_committed,
     show_device_effective,
 )
-from views.outputs import (
+from views.displays import (
     display_account,
     display_gateways,
     display_output,
