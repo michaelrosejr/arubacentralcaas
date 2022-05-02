@@ -6,20 +6,10 @@ import typer
 from rich import print
 from rich.console import Console
 
-from config.settings import settings
-from model.push_config import caas_push_config
-from model.shows import (
-    get_gateways,
-    get_routes,
-    show_device_committed,
-    show_device_effective,
-)
-from views.displays import (
-    display_account,
-    display_gateways,
-    display_output,
-    display_routes,
-)
+from .config.settings import settings
+from .model.push_config import caas_push_config
+from .model.shows import get_gateways, get_routes, show_device_committed, show_device_effective
+from .views.displays import display_account, display_gateways, display_output, display_routes
 
 console = Console()
 app = typer.Typer()
@@ -27,8 +17,8 @@ app = typer.Typer()
 
 storedaccount = settings.ACCOUNT
 print(
-    f"\nUsing acccount: [#ff8300]{storedaccount}[/#ff8300]. \nTo change use --account or \
-    set the ACCOUNT environment variable: [yellow]export ACCOUNT='myprofile'[/yellow].\n"
+    f"\nUsing acccount: [#ff8300]{storedaccount}[/#ff8300]. \nTo change use --account or"
+    " set the ACCOUNT environment variable: [yellow]export ACCOUNT='myprofile'[/yellow].\n"
 )
 
 
@@ -51,9 +41,7 @@ def show_routes(
 
     SERIAL required for this command
     """
-    with console.status(
-        "Getting Routes...", spinner="point", spinner_style="bold green"
-    ):
+    with console.status("Getting Routes...", spinner="point", spinner_style="bold green"):
         routes = get_routes(serial, account)
     display_routes(serial, routes)
 
@@ -64,9 +52,7 @@ def show_gateways(account: str = typer.Option(storedaccount, help="show gateways
     show list of gateways in Central account
 
     """
-    with console.status(
-        "Getting gateways...", spinner="point", spinner_style="bold green"
-    ):
+    with console.status("Getting gateways...", spinner="point", spinner_style="bold green"):
         gateways = get_gateways(account)
     display_gateways(gateways)
 
@@ -83,9 +69,7 @@ def show_committed(
     """
     'show configuration committed' for group/device
     """
-    with console.status(
-        "Getting show committed...", spinner="point", spinner_style="bold green"
-    ):
+    with console.status("Getting show committed...", spinner="point", spinner_style="bold green"):
         query = show_device_committed(group, account)
         display_output(query, save)
 
@@ -102,9 +86,7 @@ def show_effective(
     """
     'show configuration effective' for group/device
     """
-    with console.status(
-        "Getting show effective...", spinner="point", spinner_style="bold green"
-    ):
+    with console.status("Getting show effective...", spinner="point", spinner_style="bold green"):
         query = show_device_effective(group, account)
         display_output(query, save)
 

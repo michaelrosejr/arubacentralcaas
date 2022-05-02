@@ -2,19 +2,20 @@ import inspect
 import sys
 import time
 from functools import lru_cache
+from pathlib import Path
 
 import yaml
 from loguru import logger
-from model.tests import central_test
 from pycentral.base import ArubaCentralBase
 from pydantic import BaseSettings
 
+from ..model.tests import central_test
+
 test_dir = "tests/resources/"
 save_output_dir = "temp/"
+log_level = "INFO"
 
-logger.add(
-    sys.stderr, format="{time} {level} {message}", filter="my_module", level="INFO"
-)
+logger.add(sys.stderr, format="{time} {level} {message}", filter="my_module", level="INFO")
 
 
 class Settings(BaseSettings):
@@ -23,7 +24,18 @@ class Settings(BaseSettings):
 
 settings = Settings()  # type: ignore
 
-with open(r"config/config.yaml") as file:
+# Look for config.yaml file
+config_file_name = "config.yaml"
+local_dir = f"{Path.home()}/{config_file_name}"
+local_dir_config = f"{Path.home()}/.config/central/{config_file_name}"
+if Path(local_dir).exists():
+    config_file = local_dir
+elif Path(local_dir_config).exists():
+    config_file = local_dir_config
+else:
+    print(f"\n[red]Config file not found: {local_dir_config}[/red]")
+    exit(1)
+with open(config_file, "r") as file:
     configfile = yaml.load(file, Loader=yaml.FullLoader)
 
 
@@ -48,15 +60,15 @@ def get_config(account, ttl_hash=None):
     #         json.dump(account_name, cache)
     central_info = configfile[storedaccount]
     # Grab the calling function so we can use it for testing
-    calling_function = inspect.stack()[1][3]
+    calling_function = list()
+    calling_function.append(inspect.stack()[1][3])
+    calling_function.append(test_dir)
 
     if account == "tests":
         # Send name of calling function to pull test json file
         central = central_test(calling_function)
     else:
-        central = ArubaCentralBase(
-            central_info=central_info, ssl_verify=True, logger=logger
-        )
+        central = ArubaCentralBase(central_info=central_info, ssl_verify=True, logger=logger)
 
     return central
 

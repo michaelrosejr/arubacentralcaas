@@ -2,14 +2,12 @@ import inspect
 import ipaddress
 import json
 
-from arubacentralcaas.config.settings import (
-    configfile,  # noqa: E402
-    save_output_dir,
-    settings,
-)
 from rich import box, print
 from rich.console import Console
 from rich.table import Table
+
+from ..config.settings import configfile  # noqa: E402
+from ..config.settings import save_output_dir, settings
 
 console = Console()
 
@@ -101,11 +99,7 @@ def display_routes(serial, routes):
                 route_table.add_row(
                     route["nexthop"][0]["protocol"],
                     route["prefix"] + "/" + str(route["length"]),
-                    "["
-                    + str(route["nexthop"][0]["admin_distance"])
-                    + "/"
-                    + str(route["nexthop"][0]["metric"])
-                    + "]",
+                    "[" + str(route["nexthop"][0]["admin_distance"]) + "/" + str(route["nexthop"][0]["metric"]) + "]",
                     "via " + route["nexthop"][0]["address"],
                     style=rowstyle,
                 )
@@ -122,11 +116,7 @@ def display_routes(serial, routes):
                 route_table.add_row(
                     route["nexthop"][0]["protocol"],
                     route["prefix"] + "/" + str(route["length"]),
-                    "["
-                    + str(route["nexthop"][0]["admin_distance"])
-                    + "/"
-                    + str(route["nexthop"][0]["metric"])
-                    + "]",
+                    "[" + str(route["nexthop"][0]["admin_distance"]) + "/" + str(route["nexthop"][0]["metric"]) + "]",
                     nexthopaddress,
                     style=rowstyle,
                 )

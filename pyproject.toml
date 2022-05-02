@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "central-vgw-tunnelapi"
-version = "0.1.0"
-description = ""
+name = "arubacentralcaas"
+version = "0.1.5"
+description = "Aruba Central CaaS API CLI"
 authors = ["Michael Rose Jr. <michael@michaelrosejr.com>"]
 license = "MIT"
 
@@ -17,6 +17,14 @@ loguru = "^0.6.0"
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
 pytest-mock = "^3.7.0"
+
+[tool.black]
+line-length = 120
+include = "\\.pyi?$"
+exclude = "/(\n    \\.git\n  | \\.hg\n  | \\.mypy_cache\n  | \\.tox\n  | \\.venv\n  | _build\n  | buck-out\n  | build\n  | dist\n)/\n"
+
+[tool.poetry.scripts]
+caas = "arubacentralcaas.app:app"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

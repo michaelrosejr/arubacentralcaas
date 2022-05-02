@@ -1,8 +1,9 @@
 import json
 
-from config.settings import configfile, get_config, get_ttl_hash
 from rich import print
 from rich.console import Console
+
+from ..config.settings import configfile, get_config, get_ttl_hash
 
 console = Console()
 
@@ -28,9 +29,7 @@ def caas_push_config(config_file, groupdev_name, account):
             "Content-Type": "application/json",
             "Authorization": f"Bearer {central.getToken()['access_token']}",  # type: ignore
         }
-        print(
-            f"[bold]You are about to push changes to the account[/bold] [#ff8300]{account}[/#ff8300]!"
-        )
+        print(f"[bold]You are about to push changes to the account[/bold] [#ff8300]{account}[/#ff8300]!")
         confirm = console.input(
             f"Type`[bold red]confirm[/bold red]` to [red]push[/red] changes in file \
                 '[cyan]{config_file}[/cyan]' to [yellow]{groupdev_name}[/yellow]: "
@@ -38,9 +37,7 @@ def caas_push_config(config_file, groupdev_name, account):
 
         if confirm == "confirm":
             print("\nConfirmation recieved!")
-            print(
-                f"Pushing configuration in [blue]{config_file}[/blue] to [green]{groupdev_name}[/green]...\n"
-            )
+            print(f"Pushing configuration in [blue]{config_file}[/blue] to [green]{groupdev_name}[/green]...\n")
             query = central.command(
                 apiMethod=apiMethod,
                 headers=apiHeaders,
@@ -50,9 +47,7 @@ def caas_push_config(config_file, groupdev_name, account):
             )
 
             if query["code"] != 200:
-                response = (
-                    f"[red]Error Status Code: {query['code']} : {query['msg']}[/red]"
-                )
+                response = f"[red]Error Status Code: {query['code']} : {query['msg']}[/red]"
             else:
                 response = query["msg"]
         else:
