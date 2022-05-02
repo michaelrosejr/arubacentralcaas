@@ -35,6 +35,12 @@ Commands:
 
 Requires python 3.9+ and pip
 
+### PIP
+```
+pip install arubacentralcaas
+```
+
+
 ### Using Poetry
 ```
 git clone git@github.com:michaelrosejr/arubacentralcaas.git
@@ -51,7 +57,20 @@ pip install -r requirements.txt --no-index
 
 ```
 
-Then create the `config.yaml` file in the `/config` directory. There's a `config.yaml.sample` file to use as a template. The script will default to 'central_info' as the account name if one is not set.
+##Create a config file
+Then create the `config.yaml` file in the `$HOME/config` or `$HOME/.config/central/` directory. There's a [`config.yaml.sample`](https://github.com/michaelrosejr/arubacentralcaas/blob/master/arubacentralcaas/config/config.yaml.sample) file to use as a template. The script will default to 'central_info' as the account name if one is not set.
+
+```bash
+central_info:
+    client_id: "<Your Aruba Central API Client ID>"
+    client_secret: "<Client Secret for the specified Client ID>"
+    customer_id: "<Aruba Central Customer ID>"
+    username: "<Aruba Central Username>"
+    password: "<aruba-central-account-password>"
+    base_url: "https://central-apigw.central.arubanetworks.com"  # The base of the Aruba Central API GW *for the Cluster you belong to* Starts with https://, ends with arubanetworks.com
+```
+
+
 
 You can pass the account name using the `--account [account_name]` option. You can also set the environment variable as well: `export ACCOUNT=[account_name]`
 
