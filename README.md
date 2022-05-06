@@ -43,17 +43,18 @@ pip install arubacentralcaas
 
 ### Using Poetry
 ```
-git clone git@github.com:michaelrosejr/arubacentralcaas.git
+git clone https://github.com/michaelrosejr/arubacentralcaas.git
 poetry install
 poetry shell
 ```
 
 ### Using venv
 ```
-git clone git@github.com:michaelrosejr/arubacentralcaas.git
-python3 -m venv arubacentralcaas
-source env/bin/activate
-pip install -r requirements.txt --no-index
+git clone https://github.com/michaelrosejr/arubacentralcaas.git
+python3 -m venv venv
+source venv/bin/activate
+cd arubacentralcaas/
+pip install -r requirements.txt
 
 ```
 

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+__package__ = "arubacentralcaas"
 from typing import Optional
 
 import typer
@@ -112,5 +113,5 @@ def push_config(
     print(query)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__" and __package__ is None:
     app()
