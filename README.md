@@ -130,7 +130,7 @@ Create a JSON file in the format of:
 Then load push the configuration to Aruba Central via this caas CLI:
 
 ```
-caas push-config sample/example2.json GROUP/00:11:22:33:44:55
+caas push-config samples/example2.json GROUP/00:11:22:33:44:55
 ```
 
 ### Save your output (--save)
