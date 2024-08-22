@@ -2,7 +2,7 @@
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
-Tested Aruba Central 2.5.5
+Tested Aruba Central 2.5.8
 
 This CLI is tool to view, manage and push devices changes via JSON updates to Aruba Central API for gateways/controllers (SD-WAN or AOS10). The CaaS API is useful if the Web GUI or RESTful API does not exist for specific feature or option in the config, that is not available in the Web GUI.
 
